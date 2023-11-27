@@ -7,20 +7,17 @@ public class Serie extends Livro {
 	private int volume;
 
 	// Constructor
-	public Serie(String titulo, int id, String escritore, float preco, String nomeSerie, int volume) {
-		super(titulo, id, escritore, preco);
+	public Serie(int id, String titulo, String escritore, float preco, String nomeSerie, int volume) {
+		super(volume, titulo, escritore, preco);
 		this.nomeSerie = nomeSerie;
 		this.volume = volume;
 	}
 	
-	@Override
-	public void visualizar() { // visualizar com série + volume
+	// Métodos
+	public void visualizar() {
+		super.visualizar();
+		System.out.println(("\tSérie: " + this.getNomeSerie()) + ", volume: " + this.getVolume());
 		
-		System.out.println("Dados do Livro: ");
-		System.out.println("Título: " + this.getTitulo());
-		System.out.println("Série: " + this.nomeSerie + ", volume: " + this.getVolume());		
-		System.out.println("Escritore: " + this.getescritore());
-		System.out.println("Preço: " + this.getPreco());
 	}
 	
 	//Getters e Setters

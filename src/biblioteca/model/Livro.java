@@ -5,21 +5,20 @@ public abstract class Livro {
 	private int id;
 	private String escritore;
 	private float preco;
-	private int estoque;
 	
-	public Livro(String titulo, int id, String escritore, float preco) {
-		this.titulo = titulo;
+	public Livro(int id, String titulo, String escritore, float preco) {
 		this.id = id;
+		this.titulo = titulo;
 		this.escritore = escritore;
 		this.preco = preco;
 	}
 	
 	public void visualizar() {
 		
-		System.out.println("Dados do Livro: ");
-		System.out.println("Título: " + this.getTitulo());
-		System.out.println("Escritore: " + this.getescritore());
-		System.out.println("Preço: " + this.getPreco());
+		System.out.println("\tID Livro " + this.id);
+		System.out.println("\tTítulo: " + this.titulo);
+		System.out.println("\tEscritor por: " + this.getEscritore());
+		System.out.println("\tPreço: " + this.preco);
 		
 	}
 
@@ -39,11 +38,11 @@ public abstract class Livro {
 		this.id = id;
 	}
 
-	public String getescritore() {
+	public String getEscritore() {
 		return escritore;
 	}
 
-	public void setescritore(String escritore) {
+	public void setEscritore(String escritore) {
 		this.escritore = escritore;
 	}
 
@@ -54,13 +53,6 @@ public abstract class Livro {
 	public void setPreco(float preco) {
 		this.preco = preco;
 	}
-
-	public int getEstoque() {
-		return estoque;
-	}
-
-	public void setEstoque(int estoque) {
-		this.estoque = estoque;
-	}
+	
 	
 }
