@@ -8,7 +8,7 @@ public class Serie extends Livro {
 
 	// Constructor
 	public Serie(int id, String titulo, String escritore, float preco, String nomeSerie, int volume) {
-		super(volume, titulo, escritore, preco);
+		super(id, titulo, escritore, preco);
 		this.nomeSerie = nomeSerie;
 		this.volume = volume;
 	}

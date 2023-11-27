@@ -63,6 +63,9 @@ public class Menu {
  				System.out.println("Qual o valor?");
  				preco = leia.nextInt();
  				
+ 				id = livros.gerarNumero();
+ 				
+ 				
  				do {
  					System.out.println("É livro 1 - único ou 2 - Série?");
  					tipo = leia.nextInt();
@@ -72,7 +75,7 @@ public class Menu {
  				switch(tipo) {
  				
  				case 1:
- 					livros.cadastrar(new Unico(livros.gerarNumero(), titulo, escritore, preco));
+ 					livros.cadastrar(new Unico(id, titulo, escritore, preco));
  					System.out.println("Livro único adicionado com sucesso!");
  					
  					break;
@@ -83,7 +86,8 @@ public class Menu {
  		
  					System.out.println("Qual é o volume do Livro na Série? (1, 2, 3...)");
  					volume = leia.nextInt();
- 					livros.cadastrar(new Serie(livros.gerarNumero(), titulo, escritore, preco, serie, volume));
+ 					
+ 					livros.cadastrar(new Serie(id, titulo, escritore, preco, serie, volume));
  					System.out.println("Livro de série adicionado com sucesso!");
  					break;
  				} 
@@ -132,10 +136,14 @@ public class Menu {
 		 					System.out.println("Livro único alterado com sucesso!");
 						}
 						case 2 -> {
+							leia.next();
+
 		 					System.out.println("De qual série é o livro? ");
 		 					serie = leia.nextLine();
-		 					System.out.println("Qual é o volume do Livro na Série? (1, 2, 3...)");
+		 					
+		 					System.out.println("Qual é o volume do livro? ");
 		 					volume = leia.nextInt();
+
 		 					livros.atualizar(new Serie(livros.gerarNumero(), titulo, escritore, preco, serie, volume));
 		 					System.out.println("Livro de série adicionado com sucesso!");
 		 					break;
