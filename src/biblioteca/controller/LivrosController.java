@@ -17,8 +17,8 @@ public class LivrosController implements LivrosRepository {
 		
 	// Procurar ID de livro
 	@Override
-	public void procurarId(int numero) {
-		 var livro  = buscarNaCollection(numero);
+	public void procurarId(int id) {
+		 var livro  = buscarNaCollection(id);
 			
 			if (livro != null)
 				livro.visualizar();
