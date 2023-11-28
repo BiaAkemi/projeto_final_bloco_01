@@ -117,11 +117,11 @@ public class Menu {
  				
  				if (livros.buscarNaCollection(id) != null) {
 					
+					leia.nextLine();
+ 					
 					System.out.println("Digite o Nome do Livro: ");
 					titulo = leia.nextLine();
-					
-					leia.next();
-					
+										
 					System.out.println("Quem escreveu? ");
 					leia.skip("\\R?");
 					escritore = leia.nextLine();
@@ -134,11 +134,11 @@ public class Menu {
 					
 					switch(tipo) {
 						case 1 -> {
-							livros.atualizar(new Unico(livros.gerarNumero(), titulo, escritore, preco));
+							livros.atualizar(new Unico(id, titulo, escritore, preco));
 		 					System.out.println("Livro único alterado com sucesso!");
 						}
 						case 2 -> {
-							leia.next();
+							leia.nextLine();
 
 		 					System.out.println("De qual série é o livro? ");
 		 					serie = leia.nextLine();
@@ -146,7 +146,7 @@ public class Menu {
 		 					System.out.println("Qual é o volume do livro? ");
 		 					volume = leia.nextInt();
 
-		 					livros.atualizar(new Serie(livros.gerarNumero(), titulo, escritore, preco, serie, volume));
+		 					livros.atualizar(new Serie(id, titulo, escritore, preco, serie, volume));
 		 					System.out.println("Livro de série adicionado com sucesso!");
 		 					break;
 						}
@@ -161,7 +161,9 @@ public class Menu {
  				break;
  				
  			case 5:
- 				System.out.println("Remover Livro: \n\n");
+ 				System.out.println("ID do Livro que deseja remover: \n\n");
+ 				id = leia.nextInt();
+ 				livros.deletar(id);
  				break;				
 
  			}
