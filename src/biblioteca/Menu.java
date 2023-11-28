@@ -81,6 +81,8 @@ public class Menu {
  					break;
  					
  				case 2:
+ 					leia.nextLine();
+ 					
  					System.out.println("De qual série é o livro? ");
  					serie = leia.nextLine();
  		
